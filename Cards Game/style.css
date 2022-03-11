@@ -1,0 +1,54 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+body {
+    background-color: #141E27;
+    color: #EEEDDE;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#Back_Layer {
+    --grid-size: 2;
+    --card-size: 20vmin;
+    --card-gap:2vmin;
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), var(--card-size));
+    grid-template-rows: repeat(var(--grid-size), var(--card-size));
+    background-color: #203239;
+    grid-gap: var(--card-gap);
+    border: 1vmin;
+    padding: 2vmin;
+    position: relative;
+    border-radius: 1vmin;
+}
+
+.Card {
+    background-color: #E0DDAA;
+    border-radius: 1vmin;
+}
+
+.cardImg {
+    --y: 0;
+    --x:1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--card-size);
+    height: var(--card-size);
+    background-color: red;
+    border-radius: 1vmin;
+    top: calc(var(--y) * (var(--card-size)+ var(--card-gap))
+    + var(--card-gap));
+    left: calc(var(--x) * (var(--card-size)+ var(--card-gap))+
+     var(--card-gap));;
+}
+img {
+    width: var(--card-size);
+    height: var(--card-size);
+}
